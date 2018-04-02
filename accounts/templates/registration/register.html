@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+Dstagram - Register
+{% endblock %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="회원가입">
+</form>
+{% endblock %}

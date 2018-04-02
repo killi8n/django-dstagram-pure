@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Dstagram - list{% endblock %}
+{% block content %}
+{% for photo in photos %}
+<a href="{% url 'photo:photo_detail' photo.id %}" style="text-decoration: inherit;color: inherit">
+    <h3 style="text-align: center">{{ photo.title }}</h3>
+    <img src="{{ photo.photo.url }}" style="max-width: 100%"/>
+    <p>{{ photo.text|truncatewords:30 }}</p>
+</a>
+{% endfor %}
+{% endblock %}
