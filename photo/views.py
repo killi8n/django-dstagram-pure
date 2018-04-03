@@ -20,7 +20,7 @@ def post_list(request):
 
 class UploadView(LoginRequiredMixin ,CreateView):
     model = Photo
-    fields = ['title', 'text', 'photo', 'tag']
+    fields = ['title', 'text', 'photo', 'tag', 'mod_num']
     template_name = 'photo/upload.html'
 
     def form_valid(self, form):
@@ -56,7 +56,7 @@ def post_delete(sender, instance, **kwargs):
 
 class UpdateView(LoginRequiredMixin, UpdateView):
     model = Photo
-    fields = ['title', 'text', 'photo', 'tag']
+    fields = ['title', 'text', 'photo', 'tag', 'mod_num']
     template_name = 'photo/update.html'
 
     def get_success_url(self):

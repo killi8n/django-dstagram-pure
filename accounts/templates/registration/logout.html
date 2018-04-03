@@ -4,5 +4,5 @@ Dstagram - logout
 {% endblock %}
 {% block content %}
 <div class="alert alert-info">You have been successfully logged out.</div>
-<a class="btn btn-primary" href="{% url 'accounts:login' %}">Go to Login</a>
+<a class="btn btn-primary" href="{% url 'accounts:login' %}?next=/">Go to Login</a>
 {% endblock %}

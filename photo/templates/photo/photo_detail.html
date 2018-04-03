@@ -3,6 +3,10 @@
 {% block content %}
 <h1 style="text-align: center">{{ object.title }}</h1>
 <img src="{{ object.photo.url }}" style="max-width: 100%"/>
+{% if object.editted %}
+<p style="color: gray;font-size: 0.7rem;">editted</p>
+<p style="color: gray;font-size: 0.7rem;">Last Updated at {{ object.updated }}</p>
+{% endif %}
 <p>{{ object.text }}</p>
 {% if user.get_username == object.author.username %}
 <a class="btn btn-danger" href="{% url 'photo:photo_delete' object.id %}" role="button">삭제</a>
